@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './components/globalStyle';
 import NavBar from './components/NavBar/NavBar';
 import { lightTheme, darkTheme } from './components/themes';
-import Toogle from './components/Toogle/Toogle';
 import useDarkMode from './hooks/useDarkMode';
 
 const App = () => {
@@ -14,10 +13,8 @@ const App = () => {
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
         <div className='App'>
-          <NavBar></NavBar>
-          <Toogle theme={theme} toggleTheme={themeToggler}>
-            Switch theme
-          </Toogle>
+          <NavBar theme={theme} themeToggler={themeToggler} ></NavBar>
+          
         </div>
       </ThemeProvider>
     </>
