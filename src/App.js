@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './components/globalStyle';
-import NavBar from './components/NavBar';
 import { lightTheme, darkTheme } from './components/themes';
 import useDarkMode from './hooks/useDarkMode';
 import Home from './pages/Home';
