@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import AiOutlineTwitter from '@meronex/icons/ai/AiOutlineTwitter';
+import AiFillLinkedin from '@meronex/icons/ai/AiFillLinkedin';
+import AiFillGithub from '@meronex/icons/ai/AiFillGithub';
 
 export const ProfileContainer = styled.div`
   display: flex;
@@ -94,4 +97,31 @@ export const ProfileDescription = styled.p`
     text-align: center;
     margin: 0px 0px 1.7em;
   }
+`;
+
+export const ContactUl = styled.ul`
+  display: inline-flex;
+  margin: 0px;
+  padding: 0px;
+
+  @media screen and (max-width: 750px) {
+    justify-content: center;
+  }
+`;
+
+export const ContactLi = styled.li`
+  margin-right: 20px;
+  list-style: none;
+`;
+
+export const LinkedinIcon = styled(AiFillLinkedin)`
+  color: ${({ theme }) => theme.text};
+`;
+
+export const GitHubIcon = styled(AiFillGithub)`
+  color: ${({ theme }) => theme.text};
+`;
+
+export const TwitterIcon = styled(AiOutlineTwitter)`
+  color: ${({ theme }) => theme.text};
 `;
