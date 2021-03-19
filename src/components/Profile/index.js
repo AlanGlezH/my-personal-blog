@@ -14,12 +14,15 @@ import {
 } from './ProfileImageElements';
 import profileImage from '../../images/profileImage.png';
 import ReactTooltip from 'react-tooltip';
+import { useDarkMode } from '../../context/darkmode-context';
 
 const Profile = () => {
+  const { theme } = useDarkMode();
+
   return (
     <ProfileContainer>
       <WrapperImg>
-        <ProfileImg src={profileImage}></ProfileImg>
+        <ProfileImg src={profileImage} />
       </WrapperImg>
       <WrapperDescription>
         <ProfileGreeting>
@@ -35,22 +38,22 @@ const Profile = () => {
         <ContactUl>
           <ContactLi>
             <a href='https://www.linkedin.com/in/alanglezh/'>
-              <LinkedinIcon data-tip='LinkedIn' size='1.7rem' />
+              <LinkedinIcon data-tip='LinkedIn' size='1.8em' />
             </a>
           </ContactLi>
           <ContactLi>
             <a href='https://github.com/AlanGlezH'>
-              <GitHubIcon data-tip='GitHub' size='1.7rem' />
+              <GitHubIcon data-tip='GitHub' size='1.8em' />
             </a>
           </ContactLi>
           <ContactLi>
             <a href='https://twitter.com/AlanGlez14'>
-              <TwitterIcon data-tip='Twitter' size='1.7rem' />
+              <TwitterIcon data-tip='Twitter' size='1.8em' />
             </a>
           </ContactLi>
         </ContactUl>
       </WrapperDescription>
-      <ReactTooltip effect='solid' />
+      <ReactTooltip effect='solid' type={theme === 'dark' ? 'light' : 'dark'} />
     </ProfileContainer>
   );
 };
