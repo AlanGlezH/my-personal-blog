@@ -7,12 +7,6 @@ function Home() {
     <div>
       <NavBar />
       <Profile />
-      <div
-        style={{
-          width: '100%',
-          height: '800px',
-        }}
-      />
     </div>
   );
 }

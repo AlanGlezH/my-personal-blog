@@ -8,12 +8,13 @@ export const Nav = styled.nav`
   width: 100%;
   top: 0;
   padding: 20px 45px;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.084);
+  box-shadow: ${props => props.active ? 'rgb(0 0 0 / 8%) 0px 0px 15px' : 'none'};  
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   background: ${({ theme }) => theme.body};
+
 
   @media screen and (max-width: 990px) {
     height: 70px;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Nav, BurgerButton, NavImg } from './NavBarElements';
 import Switch from 'react-switch';
 import navImage from '../../images/navImage.png';
@@ -7,11 +7,25 @@ import { useDarkMode } from '../../context/darkmode-context';
 import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
+  const [active, setActive] = useState(false);
+
   const { theme, themeToggler } = useDarkMode();
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 10) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  };
 
   return (
     <header>
-      <Nav>
+      <Nav active={active}>
         <BurgerButton size='2em' />
         <Link to='/'>
           <NavImg
