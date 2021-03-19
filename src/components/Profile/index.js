@@ -50,7 +50,7 @@ const Profile = () => {
           </ContactLi>
         </ContactUl>
       </WrapperDescription>
-      <ReactTooltip />
+      <ReactTooltip effect='solid' />
     </ProfileContainer>
   );
 };
