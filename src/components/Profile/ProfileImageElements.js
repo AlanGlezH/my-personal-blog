@@ -12,16 +12,19 @@ export const ProfileContainer = styled.div`
   padding: 120px 10px;
   margin: 0px auto;
   box-sizing: border-box;
+  margin-top: 80px;
 
   @media screen and (max-width: 990px) {
     padding: 70px 90px 80px;
     width: 100%;
+    margin-top: 70px;
   }
 
   @media screen and (max-width: 750px) {
     flex-direction: column;
     padding: 50px 0px 80px;
     width: 100%;
+    margin-top: 50px;
   }
 `;
 
