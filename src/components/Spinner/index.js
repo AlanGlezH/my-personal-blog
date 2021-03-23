@@ -7,9 +7,9 @@ const SpinnerLoading = styled.div`
   height: 36px;
   border-radius: 50%;
   border-left-color: ${({ theme }) => theme.text};
-  top: 40%;
-  left: 45%;
-  transform: translate(50%, 50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: fixed;
 
   animation: spin 1s linear infinite;
@@ -24,7 +24,9 @@ const SpinnerLoading = styled.div`
     }
   }
 
-  
+  @media screen and (max-width: 750px) {
+    left: 45%;
+  }
 `;
 
 export const Spinner = () => {
