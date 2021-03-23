@@ -9,7 +9,7 @@ export const Nav = styled.nav`
   box-sizing: border-box;
   width: 100%;
   top: 0;
-  padding: 20px 45px;
+  padding: 40px 65px;
   box-shadow: ${(props) =>
     props.active ? 'rgb(0 0 0 / 8%) 0px 0px 15px' : 'none'};
   display: flex;
@@ -34,17 +34,16 @@ export const ToggleButton = styled.button`
   border: none;
   display: none;
   margin: 0;
-  padding:0;
+  padding: 0;
 
-  &:focus:not(:focus-visible){
-    outline: none; 
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
 
   @media screen and (max-width: 990px) {
     display: block;
   }
-
-`
+`;
 
 export const BurgerButton = styled(FaBars)`
   display: none;
@@ -75,8 +74,13 @@ export const CloseButton = styled(MdClose)`
 `;
 
 export const NavImg = styled.img`
-  width: 160px;
+  width: 190px;
   height: auto;
+
+  @media screen and (max-width: 990px) {
+    width: 160px;
+  }
+
   @media screen and (max-width: 750px) {
     margin-left: 0;
     width: 120px;

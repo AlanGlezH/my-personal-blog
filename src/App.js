@@ -1,8 +1,11 @@
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import { Spinner } from './components/Spinner';
 import { useDarkMode } from './context/darkmode-context';
-import Blog from './pages/Blog';
-import Home from './pages/Home';
+
+const Blog = React.lazy(() => import('./pages/Blog'));
+const Home = React.lazy(() => import('./pages/Home'));
 
 const App = () => {
   const { mountedComponent } = useDarkMode();
@@ -12,11 +15,13 @@ const App = () => {
   return (
     <>
       <Router>
-        <NavBar/>
-        <Switch>
-          <Route path='/blog' component={Blog} />
-          <Route path='/' component={Home} />
-        </Switch>
+        <NavBar />
+        <Suspense fallback={<Spinner />}>
+          <Switch>
+            <Route path='/blog' component={Blog} />
+            <Route path='/' component={Home} />
+          </Switch>
+        </Suspense>
       </Router>
     </>
   );
