@@ -8,7 +8,7 @@ const SpinnerLoading = styled.div`
   border-radius: 50%;
   border-left-color: ${({ theme }) => theme.text};
   top: 40%;
-  left: 50%;
+  left: 45%;
   transform: translate(50%, 50%);
   position: fixed;
 
