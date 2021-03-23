@@ -22,7 +22,7 @@ const Profile = () => {
   return (
     <ProfileContainer>
       <WrapperImg>
-        <ProfileImg src={profileImage} />
+        <ProfileImg src={profileImage} alt='profile'/>
       </WrapperImg>
       <WrapperDescription>
         <ProfileGreeting>

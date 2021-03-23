@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Nav, BurgerButton, NavImg } from './NavBarElements';
+import {
+  Nav,
+  BurgerButton,
+  NavImg,
+  CloseButton,
+  NavMenu,
+  NavLink,
+  ToggleButton,
+} from './NavBarElements';
 import Switch from 'react-switch';
 import navImage from '../../images/navImage.png';
 import navImageDark from '../../images/navImageDark.png';
@@ -8,12 +16,16 @@ import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
   const [active, setActive] = useState(false);
-
+  const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const { theme, themeToggler } = useDarkMode();
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuActive(!mobileMenuActive);
+  };
 
   const handleScroll = () => {
     if (window.scrollY >= 10) {
@@ -23,16 +35,41 @@ export const NavBar = () => {
     }
   };
 
+  const currenPath = window.location.pathname;
+
   return (
     <header>
       <Nav active={active}>
-        <BurgerButton size='2em' />
+        <ToggleButton onClick={toggleMobileMenu}>
+          {mobileMenuActive ? (
+            <CloseButton size='2em' />
+          ) : (
+            <BurgerButton size='2em' />
+          )}
+        </ToggleButton>
+
         <Link to='/'>
           <NavImg
             src={theme === 'light' ? navImage : navImageDark}
             alt='logo'
           />
         </Link>
+        <NavMenu mobileActive={mobileMenuActive}>
+          <NavLink
+            to='/'
+            linkActive={currenPath === '/' ? true : false}
+            onClick={toggleMobileMenu}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to='/blog'
+            linkActive={currenPath === '/blog' ? true : false}
+            onClick={toggleMobileMenu}
+          >
+            Blog
+          </NavLink>
+        </NavMenu>
         <Switch
           onChange={themeToggler}
           checked={theme === 'light' ? false : true}
