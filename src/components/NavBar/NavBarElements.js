@@ -33,6 +33,8 @@ export const ToggleButton = styled.button`
   background: none;
   border: none;
   display: none;
+  margin: 0;
+  padding:0;
 
   &:focus:not(:focus-visible){
     outline: none; 
