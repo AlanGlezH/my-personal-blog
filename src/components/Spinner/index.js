@@ -30,5 +30,5 @@ const SpinnerLoading = styled.div`
 `;
 
 export const Spinner = () => {
-  return <SpinnerLoading></SpinnerLoading>;
+  return <SpinnerLoading />;
 };
