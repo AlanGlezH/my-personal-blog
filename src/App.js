@@ -18,8 +18,12 @@ const App = () => {
         <NavBar />
         <Suspense fallback={<Spinner />}>
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/blog' component={Blog} />
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route path='/blog'>
+              <Blog />
+            </Route>
           </Switch>
         </Suspense>
       </Router>
