@@ -119,7 +119,7 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavLink = styled(Link)`
-  color: ${({ theme }) => theme.text};
+  color: ${(props) => (props.linkActive ? '#3B83BD' : props.theme.text)};
   font-family: 'Poppins';
   text-decoration: none;
   text-transform: uppercase;
