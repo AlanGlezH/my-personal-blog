@@ -37,17 +37,17 @@ const Profile = () => {
         </ProfileDescription>
         <ContactUl>
           <ContactLi>
-            <a href='https://www.linkedin.com/in/alanglezh/'>
+            <a href='https://www.linkedin.com/in/alanglezh/' target="_blank">
               <LinkedinIcon data-tip='LinkedIn' size='1.8em' />
             </a>
           </ContactLi>
           <ContactLi>
-            <a href='https://github.com/AlanGlezH'>
+            <a href='https://github.com/AlanGlezH' target="_blank">
               <GitHubIcon data-tip='GitHub' size='1.8em' />
             </a>
           </ContactLi>
           <ContactLi>
-            <a href='https://twitter.com/AlanGlez14'>
+            <a href='https://twitter.com/AlanGlez14' target="_blank">
               <TwitterIcon data-tip='Twitter' size='1.8em' />
             </a>
           </ContactLi>
