@@ -15,6 +15,7 @@ import {
 import profileImage from '../../images/profileImage.png';
 import ReactTooltip from 'react-tooltip';
 import { useDarkMode } from '../../context/darkmode-context';
+import { description } from '../../constants/ProfileDescription';
 
 const Profile = () => {
   const { theme } = useDarkMode();
@@ -22,18 +23,14 @@ const Profile = () => {
   return (
     <ProfileContainer>
       <WrapperImg>
-        <ProfileImg src={profileImage} alt='profile'/>
+        <ProfileImg src={profileImage} alt='profile' />
       </WrapperImg>
       <WrapperDescription>
         <ProfileGreeting>
-          ¡Hola! Soy <b>Alan</b>
+          ¡Hi! I'm <b>Alan</b>
         </ProfileGreeting>
         <ProfileDescription>
-          He estado estudiando Ingeniería de Software durante los últimos 4
-          años. Desarrollar software de calidad es algo que me encanta y
-          realmente me apasiona. El aprendizaje continuo se ha vuelto un estilo
-          de vida para mí, por lo que en este blog me encantaría compartir un
-          poco de lo que aprendo contigo.
+          {description}
         </ProfileDescription>
         <ContactUl>
           <ContactLi>
