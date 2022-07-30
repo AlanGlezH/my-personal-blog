@@ -27,7 +27,7 @@ const Profile = () => {
       </WrapperImg>
       <WrapperDescription>
         <ProfileGreeting>
-          ¡Hi! I'm <b>Alan</b>
+          Hi! I'm <b>Alan</b>
         </ProfileGreeting>
         <ProfileDescription>
           {description}
